@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Hello World | experimento-5",
-  description: "Minimal Next.js Hello World application deployed on Vercel.",
+  title: "Produtos Bancários | experimento-5",
+  description: "CRUD de produtos bancários construído com Next.js e implantado na Vercel.",
 };
 
 export const viewport: Viewport = {
@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body>{children}</body>
     </html>
   );

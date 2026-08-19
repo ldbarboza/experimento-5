@@ -1,7 +1,29 @@
 # experimento-5
 
-Minimal "Hello World" application built with Next.js 14 (App Router, TypeScript)
-and ready for zero-config deployment on Vercel.
+CRUD de produtos bancários built with Next.js 14 (App Router, TypeScript) and
+ready for zero-config deployment on Vercel.
+
+## Features
+
+The root page (`/`) lists the registered banking products and offers **Novo
+Produto**, **Editar** and **Excluir** (with a confirmation dialog) actions. The
+UI talks to these Route Handlers:
+
+| Method | Route | Purpose |
+| --- | --- | --- |
+| `GET` | `/api/banking-products` | List products, most recently created first |
+| `POST` | `/api/banking-products` | Create a product (`201`, or `400` with `{ errors }`) |
+| `PUT` | `/api/banking-products/:id` | Update a product (`200`, `400`, or `404`) |
+| `DELETE` | `/api/banking-products/:id` | Delete a product (`204` or `404`) |
+
+A product has `id`, `name`, `type` (`CONTA_CORRENTE`, `CONTA_POUPANCA`,
+`CARTAO_CREDITO`, `EMPRESTIMO_PESSOAL`, `INVESTIMENTO`), `description`,
+`interestRate` (% p.a.), `monthlyFee` (BRL), `isActive` and `createdAt`.
+
+> **Persistence:** products live in a module-level `Map` inside the server
+> process (`lib/store.ts`). Data is therefore lost on every server restart, and
+> `next dev` also resets it whenever the module is hot-reloaded. Swapping
+> `lib/store.ts` for a real database is the only change needed to persist data.
 
 ## Requirements
 
