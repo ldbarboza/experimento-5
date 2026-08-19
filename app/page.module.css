@@ -1,0 +1,166 @@
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1a2430;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.alert {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #f0b4b4;
+  border-radius: 0.375rem;
+  background: #fdf1f1;
+  color: #8c1c1c;
+}
+
+.empty {
+  padding: 2rem;
+  border: 1px dashed #c8d2dc;
+  border-radius: 0.375rem;
+  text-align: center;
+  color: #5b6b7b;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid #e2e8ee;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+.numeric {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.description {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #5b6b7b;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.page button {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid #c8d2dc;
+  border-radius: 0.375rem;
+  background: #ffffff;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.page button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.primary {
+  border-color: #12507d;
+  background: #12507d;
+  color: #ffffff;
+}
+
+.danger {
+  border-color: #a32424;
+  color: #a32424;
+}
+
+.dialog {
+  width: min(30rem, 92vw);
+  padding: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.25rem 3rem rgba(11, 22, 34, 0.25);
+}
+
+.dialog::backdrop {
+  background: rgba(11, 22, 34, 0.45);
+}
+
+.dialog h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field > span {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #c8d2dc;
+  border-radius: 0.375rem;
+  font: inherit;
+}
+
+.field [aria-invalid="true"] {
+  border-color: #a32424;
+}
+
+.checkbox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #a32424;
+}
+
+.dialogActions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
