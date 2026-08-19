@@ -90,6 +90,13 @@ describe("validateCreateInput", () => {
   it("rejects a non-object body", () => {
     expect(validateCreateInput(null).valid).toBe(false);
   });
+
+  it("rejects an invalid isActive value when present", () => {
+    const result = validateCreateInput({ ...validBody, isActive: "maybe" });
+
+    expect(result.valid).toBe(false);
+    expect(result.errors?.isActive).toBeDefined();
+  });
 });
 
 describe("validateUpdateInput", () => {
@@ -116,5 +123,12 @@ describe("validateUpdateInput", () => {
   it("reads the checkbox strings a form submits for isActive", () => {
     expect(validateUpdateInput({ isActive: "on" }).value?.isActive).toBe(true);
     expect(validateUpdateInput({ isActive: "false" }).value?.isActive).toBe(false);
+  });
+
+  it("treats a non-object body as an empty patch", () => {
+    const result = validateUpdateInput(null);
+
+    expect(result.valid).toBe(true);
+    expect(result.value).toEqual({});
   });
 });

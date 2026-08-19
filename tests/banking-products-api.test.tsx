@@ -135,6 +135,19 @@ describe("PUT /api/banking-products/:id", () => {
     expect(response.status).toBe(400);
     expect(body.errors.interestRate).toBeDefined();
   });
+
+  it("answers 400 for a malformed JSON body", async () => {
+    const response = await PUT(
+      new Request(`${BASE_URL}/any-id`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: "{not json",
+      }),
+      { params: { id: "any-id" } },
+    );
+
+    expect(response.status).toBe(400);
+  });
 });
 
 describe("DELETE /api/banking-products/:id", () => {
